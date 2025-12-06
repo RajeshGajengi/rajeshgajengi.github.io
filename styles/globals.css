@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body, #__next {
+height: 100%;
+}
+
+
+body {
+@apply bg-gray-50 text-gray-800;
+}
+
+/* Typewriter animation */
+/* .typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40) forwards;
+} */
+
+/* Blinking cursor
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 0.7s infinite;
+} */
+
+/* Keyframes */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* remove any previous .typewriter-text or white-space: nowrap rules */
+
+/* blinking cursor */
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 6px;
+  line-height: 1;
+  animation: tw-blink 1s steps(2, start) infinite;
+  color: inherit; /* match current text color (works in dark mode too) */
+}
+
+/* blink keyframes */
+@keyframes tw-blink {
+  50% { opacity: 0; }
+}
+
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
