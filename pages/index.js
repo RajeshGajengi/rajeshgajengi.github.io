@@ -56,8 +56,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 text-gray-700 dark:text-gray-300 text-lg">
-              I specialize in cloud infrastructure, CI/CD automation, SRE practices,
-              container orchestration, and scalable distributed systems.
+              Building scalable cloud infrastructure, automating deployments, and improving system reliability with AWS, Kubernetes, and CI/CD pipelines.
             </p>
 
             <div className="mt-8 flex gap-4">
@@ -79,9 +78,8 @@ export default function Home() {
         <section id="about" className="mt-24">
           <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">About Me</h2>
           <p className="mt-4 text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed">
-            I'm a DevOps Engineer with strong experience in cloud platforms, Linux systems,
-            production-grade CI/CD pipelines, observability, and container orchestration.
-            I focus on reliability, automation, and scalable infrastructure.
+            I am a DevOps Engineer with a strong background in IT operations and cloud technologies. I specialize in AWS, Terraform, Docker, Kubernetes, CI/CD automation, and monitoring tools. 
+            My focus is on streamlining deployments, ensuring high availability, and implementing efficient infrastructure as code to help organizations deliver software faster and more reliably.
           </p>
 
           {/* SKILLS */}
