@@ -131,6 +131,27 @@ const projects = [
   }
 ]
 
+
+
+// Skills scrolling
+import SkillsMarquee from "../components/SkillsMarquee"
+
+const toolIcons = [
+  { src: "/icons/docker.svg", alt: "Docker" },
+  { src: "/icons/kubernetes.svg", alt: "Kubernetes" },
+  { src: "/icons/terraform.svg", alt: "Terraform" },
+  { src: "/icons/ansible.svg", alt: "Ansible" },
+  { src: "/icons/aws.svg", alt: "AWS" },
+  { src: "/icons/python.svg", alt: "Python" },
+  { src: "/icons/prometheus.svg", alt: "Prometheus" },
+  { src: "/icons/grafana.svg", alt: "Grafana" },
+  { src: "/icons/helm.svg", alt: "Helm" },
+  { src: "/icons/github.svg", alt: "GitHub" },
+  { src: "/icons/flask.svg", alt: "Flask" },
+]
+
+
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-darkBg transition-colors duration-300">
@@ -179,37 +200,30 @@ export default function Home() {
             I am a DevOps Engineer with a strong background in IT operations and cloud technologies. I specialize in AWS, Terraform, Docker, Kubernetes, CI/CD automation, and monitoring tools. 
             My focus is on streamlining deployments, ensuring high availability, and implementing efficient infrastructure as code to help organizations deliver software faster and more reliably.
           </p>
-
-          {/* SKILLS */}
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-white dark:bg-darkCard shadow border border-gray-200 dark:border-gray-700">
-              <h3 className="font-bold text-lg text-indigo-600 dark:text-indigo-300">Cloud</h3>
-              <ul className="mt-2 text-gray-700 dark:text-gray-300 space-y-1">
-                <li>AWS (EC2, VPC, S3, IAM)</li>
-                <li>Azure Basics</li>
-                <li>Cloud Networking</li>
-              </ul>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white dark:bg-darkCard shadow border border-gray-200 dark:border-gray-700">
-              <h3 className="font-bold text-lg text-indigo-600 dark:text-indigo-300">DevOps Tools</h3>
-              <ul className="mt-2 text-gray-700 dark:text-gray-300 space-y-1">
-                <li>Docker • Kubernetes</li>
-                <li>Terraform • Ansible</li>
-                <li>Helm Charts</li>
-              </ul>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white dark:bg-darkCard shadow border border-gray-200 dark:border-gray-700">
-              <h3 className="font-bold text-lg text-indigo-600 dark:text-indigo-300">CI/CD & Automation</h3>
-              <ul className="mt-2 text-gray-700 dark:text-gray-300 space-y-1">
-                <li>GitHub Actions</li>
-                <li>Jenkins Pipelines</li>
-                <li>Shell & Python Automation</li>
-              </ul>
-            </div>
-          </div>
         </section>
+
+        {/* SKILLS */}
+        <section id="skills" className="mt-12">
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Tools & Technologies</h3>
+
+          <div className="relative my-8">
+            {/* top gradient line */}
+            <div className="absolute left-6 right-6 -top-2 h-1 rounded-full
+                            bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500
+                            opacity-40 dark:opacity-60"></div>
+
+            {/* marquee container with small vertical padding so icons don't overlap lines */}
+            <div className="pt-4 pb-4 rounded-xl bg-white/40 dark:bg-white/5 px-4">
+              <SkillsMarquee icons={toolIcons} speed={80} height={54} />
+            </div>
+
+            {/* bottom gradient line */}
+            <div className="absolute left-6 right-6 -bottom-2 h-1 rounded-full
+                            bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500
+                            opacity-40 dark:opacity-60"></div>
+        </div>
+
+        </section>  
 
         {/* PROJECTS */}
         <section id="projects" className="mt-24">

@@ -73,3 +73,23 @@ body {
 @keyframes blink {
   50% { opacity: 0; }
 }
+
+
+
+/* globals.css additions */
+.prose a { color: inherit; text-decoration: underline; }
+.dark .prose a { color: #a78bfa; } /* violet-ish link on dark */
+
+
+
+/* globals.css additions */
+.marquee { /* container handled in component */ }
+.marquee-track { /* track handled inline */ }
+.marquee-item img { display: block; }
+
+/* optional: subtle gradient "road" background */
+.skills-road {
+  background: linear-gradient(90deg, rgba(99,102,241,0.06), rgba(139,92,246,0.04));
+  border-radius: 12px;
+  padding: 12px;
+}
