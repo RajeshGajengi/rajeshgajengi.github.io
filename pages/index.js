@@ -137,17 +137,21 @@ const projects = [
 import SkillsMarquee from "../components/SkillsMarquee"
 
 const toolIcons = [
+  { src: "/icons/linux.svg", alt: "Linux" },
+  { src: "/icons/git.svg", alt: "Git" },
+  { src: "/icons/github.svg", alt: "GitHub" },
   { src: "/icons/docker.svg", alt: "Docker" },
   { src: "/icons/kubernetes.svg", alt: "Kubernetes" },
+  { src: "/icons/helm.svg", alt: "Helm" },
   { src: "/icons/terraform.svg", alt: "Terraform" },
   { src: "/icons/ansible.svg", alt: "Ansible" },
-  { src: "/icons/aws.svg", alt: "AWS" },
   { src: "/icons/python.svg", alt: "Python" },
+  { src: "/icons/datadog.svg", alt: "Datadog" },
   { src: "/icons/prometheus.svg", alt: "Prometheus" },
   { src: "/icons/grafana.svg", alt: "Grafana" },
-  { src: "/icons/helm.svg", alt: "Helm" },
-  { src: "/icons/github.svg", alt: "GitHub" },
-  { src: "/icons/flask.svg", alt: "Flask" },
+  { src: "/icons/aws.svg", alt: "AWS" },
+  { src: "/icons/gcp.svg", alt: "GCP" },
+  { src: "/icons/azure.svg", alt: "Azure" },
 ]
 
 
@@ -243,14 +247,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CONTACT SECTION */}
+        {/* CONTACT SECTION: form left + animated GIF right */}
         <section id="contact" className="mt-24">
           <h2 className="text-3xl font-semibold text-gray-900 dark:text-slate-100">Contact Me</h2>
           <p className="mt-3 text-gray-700 dark:text-slate-300 max-w-xl">Feel free to reach out...</p>
 
-          {/* use the ContactForm component defined above */}
-          <ContactForm />
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* LEFT: Contact form (existing ContactForm component) */}
+            <div>
+              <ContactForm />
+            </div>
+
+            {/* RIGHT: Decorative GIF (hidden on small screens) */}
+            <div className="hidden md:flex items-center justify-center">
+              <div className="w-full max-w-2xl p-2 rounded-2xl bg-white dark:bg-darkCard border border-gray-200 dark:border-darkBorder shadow-lg">
+                {/* Decorative image: aria-hidden so screen readers ignore it */}
+                <img
+                  src="/animations/devops_cicd.gif"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="w-full h-auto rounded-lg object-cover"
+                />
+
+                {/* caption (optional, visible only for sighted users)
+                <div className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                  Interactive demo — hover the form to pause animation.
+                </div> */}
+              </div>
+            </div>
+          </div>
         </section>
+
       </main>
 
       <Footer />

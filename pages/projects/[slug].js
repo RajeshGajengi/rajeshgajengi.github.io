@@ -8,26 +8,8 @@ import Image from "next/image"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import TechIconInline from "../../components/TechIconInline"
+import TechIcon from "../../components/TechIcon"
 
-// small SVG icons for common tech (inline so no deps)
-const TechIcon = ({ name }) => {
-  const size = 16
-  const common = { width: size, height: size, className: "inline-block mr-2 align-middle" }
-  switch ((name || "").toLowerCase()) {
-    case "docker":
-      return (<svg {...common} viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="34" y="86" width="60" height="40" fill="#2496ED"/><rect x="100" y="86" width="60" height="40" fill="#2496ED"/><rect x="34" y="132" width="60" height="40" fill="#2496ED"/><rect x="100" y="132" width="60" height="40" fill="#2496ED"/></svg>)
-    case "kubernetes":
-    case "k8s":
-      return (<svg {...common} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2 3 3 1-1 3 2 2-3 2-1 3-2-2-2 2-1-3-3-2 2-2-1-3 3-1 2-3z" fill="#326CE5"/></svg>)
-    case "aws":
-    case "amazon":
-      return (<svg {...common} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 18s4-4 10-4 10 4 10 4" stroke="#FF9900" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>)
-    case "python":
-      return (<svg {...common} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h7v3H7v2H5V3z" fill="#3776AB"/><path d="M19 21h-7v-3h5v-2h2v5z" fill="#FFD43B"/></svg>)
-    default:
-      return (<svg {...common} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#94A3B8" strokeWidth="1.5"/></svg>)
-  }
-}
 
 export async function getStaticPaths() {
   const paths = projects.map((p) => ({ params: { slug: p.slug } }))
@@ -100,19 +82,10 @@ export default function ProjectDetails({ project }) {
               {/* tech chips */}
               <div className="mt-6 flex flex-wrap gap-2">
                 {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="
-                        inline-flex items-center gap-2
-                        px-3 py-1 rounded-full text-sm font-medium
-                        bg-gray-200 text-gray-900
-                        dark:bg-[#1e2b3a] dark:text-gray-100
-                        border border-gray-300 dark:border-gray-600
-                        shadow-sm
-                    "
-                    >
-                    <TechIconInline name={t} size={18} />
-                    <span className="leading-none">{t}</span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium
+                 bg-gray-200 text-gray-900 dark:bg-[#1e2b3a] dark:text-gray-100
+                 border border-gray-300 dark:border-gray-600 shadow-sm">
+                <TechIcon name={t} /> {t}
                 </span>
 
                 ))}

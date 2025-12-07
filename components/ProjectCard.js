@@ -1,7 +1,7 @@
 // components/ProjectCard.js
 import Link from "next/link"
 import { motion } from "framer-motion"
-import TechIconInline from "./TechIconInline"
+import TechIcon from "../components/TechIcon"
 
 export default function ProjectCard({ project }) {
   return (
@@ -22,20 +22,11 @@ export default function ProjectCard({ project }) {
         {/* Tech chips */}
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tech.slice(0, 4).map((t) => (
-            <span
-  key={t}
-  className="
-    inline-flex items-center gap-2
-    px-3 py-1 rounded-full text-sm font-medium
-    bg-gray-200 text-gray-900
-    dark:bg-[#1e2b3a] dark:text-gray-100
-    border border-gray-300 dark:border-gray-600
-    shadow-sm
-  "
->
-  <TechIconInline name={t} size={18} />
-  <span className="leading-none">{t}</span>
-</span>
+        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium
+                 bg-gray-200 text-gray-900 dark:bg-[#1e2b3a] dark:text-gray-100
+                 border border-gray-300 dark:border-gray-600 shadow-sm">
+        <TechIcon name={t} /> {t}
+        </span>
           ))}
         </div>
 
