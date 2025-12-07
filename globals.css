@@ -1,0 +1,3 @@
+/* globals.css additions */
+.prose a { color: inherit; text-decoration: underline; }
+.dark .prose a { color: #a78bfa; } /* violet-ish link on dark */
